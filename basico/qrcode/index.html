@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,700&family=Poppins:wght@200;300;400;600;700;800&display=swap');
+        * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif;}
+        .qrcode {margin: 2rem auto;}
+    </style>
+    <div class="container" style="height: 800px;background: #5580e6;display: flex;">
+        <div class="card" style="background: white;width: 500px;height: auto;border: 1px solid #aaa;border-radius: 15px;
+            margin: auto;padding: 2rem;display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <h2 style="text-align: center;">Gabriel Dantas</h2>
+            <button onclick="generateQRCode()" style="background: #00000000;border: none;cursor: pointer;">
+                <img id="image" src="hide.png" width="50">
+            </button>
+            <div id="olho" onclick="generateQRCode()" style="width:400px; height:400px; background:#424242; 
+                display:flex; justify-content:center; align-items:center; margin:2rem auto;">
+                <img id="image" src="hide.png" width="100">
+            </div>
+            <div id="qrcode"></div>
+            <p style="text-align: center;font-size: 20px;">PIS: 23123123</p>
+        </div>
+    </div>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script type="text/javascript">
+        let closed = true;
+        let olho = document.getElementById("olho");
+        let qrcode = document.getElementById("qrcode");
+        var img = document.querySelector("#image");
+        function generateQRCode() {
+            if (closed) {
+                qrcode.innerHTML = "";
+                new QRCode(qrcode, {
+                    text : 4123, // #{qrCodeBean.idColaborador}
+                    width : 400,
+                    height : 400,
+                    colorDark : "#37332d",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                olho.style.display = "none";
+                qrcode.style.display = "flex";
+                qrcode.classList.add("qrcode");
+                img.setAttribute('src','hide.png');
+                closed = false;
+            } else {
+                olho.style.display = "flex";
+                qrcode.style.display = "none";
+                img.setAttribute('src','show.png');
+                console.log("Alow");
+                closed = true;
+            }
+        }
+    </script>
+</body>
+</html>
