@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+        body {display: flex;justify-content: center;align-items: center;height: 100vh;}
+    </style>
+
+    <input id="qrImage" type="text" value="vazio">
+    <button onclick="mudar()">Mudar</button>
+    <button onclick="generateQRCode()">Gerar</button>
+    <div id="qrcode"></div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+        let qrImage = document.getElementById("qrImage");
+        function mudar() {
+            let tagImg = qrcode.children[1].src;
+            qrImage.value = tagImg;
+        }
+
+        let closed = true;
+        let qrcode = document.getElementById("qrcode");
+        function generateQRCode() {
+            if (closed) {
+                qrcode.innerHTML = "";
+                new QRCode(qrcode, {
+                    text : 4123, // #{qrCodeBean.idColaborador}
+                    width : 400,
+                    height : 400,
+                    colorDark : "#37332d",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            }
+        }
+    </script>
+</body>
+</html>

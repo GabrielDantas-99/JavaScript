@@ -44,3 +44,10 @@ console.log(umaString.toUpperCase());
 
 // String para minuscula
 console.log(umaString.toLowerCase());
+
+let carros = ["gol", "palio", "fiesta"]
+carros.push("hb29");
+console.log(carros)
+
+
+

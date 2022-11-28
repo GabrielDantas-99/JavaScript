@@ -11,12 +11,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,700&family=Poppins:wght@200;300;400;600;700;800&display=swap');
         * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif;}
         .qrcode {margin: 2rem auto;}
+        .container{height: 800px;background: #5580e6;display: flex;}
+        .card {background: white;width: 500px;height: auto;border: 1px solid #aaa;border-radius: 15px;margin: auto;padding: 2rem;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+        #olho {width:400px; height:400px; background:#424242;display:flex; justify-content:center; align-items:center; margin:2rem auto;}
+        button {background: #00000000;border: none;cursor: pointer;}
     </style>
-    <div class="container" style="height: 800px;background: #5580e6;display: flex;">
-        <div class="card" style="background: white;width: 500px;height: auto;border: 1px solid #aaa;border-radius: 15px;
-            margin: auto;padding: 2rem;display: flex;justify-content: center;align-items: center;flex-direction: column;">
+    <div class="container">
+        <div class="card" >
             <h2 style="text-align: center;">Gabriel Dantas</h2>
-            <button onclick="generateQRCode()" style="background: #00000000;border: none;cursor: pointer;">
+            <button onclick="generateQRCode()">
                 <img id="image" src="hide.png" width="50">
             </button>
             <div id="olho" onclick="generateQRCode()" style="width:400px; height:400px; background:#424242; 
@@ -25,6 +28,8 @@
             </div>
             <div id="qrcode"></div>
             <p style="text-align: center;font-size: 20px;">PIS: 23123123</p>
+            <button onclick="downloadQRCOde()">dwnld</button>
+            <input id="qrImage" value="vazio" placeholder=value/>
         </div>
     </div>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
@@ -44,11 +49,6 @@
                     colorLight : "#ffffff",
                     correctLevel : QRCode.CorrectLevel.H
                 });
-                olho.style.display = "none";
-                qrcode.style.display = "flex";
-                qrcode.classList.add("qrcode");
-                img.setAttribute('src','hide.png');
-                closed = false;
             } else {
                 olho.style.display = "flex";
                 qrcode.style.display = "none";
@@ -56,6 +56,13 @@
                 console.log("Alow");
                 closed = true;
             }
+        }
+
+        function downloadQRCOde() {
+            if (qrcode) {
+                let img = qrcode.img;
+                console.log(img);
+            } else {console.log("n")}
         }
     </script>
 </body>
