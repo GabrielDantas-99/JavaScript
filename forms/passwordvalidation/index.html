@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/blobz.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Recuperar Senha | ImportDev</title>
+</head>
+
+<body>
+
+    <div class="tk-blob" style="--time: 20s; --amount: 5; --fill: #56cbb9;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 747.2 726.7">
+            <path
+                d="M539.8 137.6c98.3 69 183.5 124 203 198.4 19.3 74.4-27.1 168.2-93.8 245-66.8 76.8-153.8 136.6-254.2 144.9-100.6 8.2-214.7-35.1-292.7-122.5S-18.1 384.1 7.4 259.8C33 135.6 126.3 19 228.5 2.2c102.1-16.8 213.2 66.3 311.3 135.4z">
+            </path>
+        </svg>
+    </div>
+    <div class="tk-blob-2" style="--fill: #2e7bbb;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 303.2">
+            <path
+                d="M260.2 41.4c20 29.2 14.6 74.5 7.2 124.4-7.3 49.9-16.6 104.5-49.2 126-32.5 21.6-88.4 10.2-132-15.2s-75-64.7-83.6-107.8C-6.1 125.7 8 79 36.3 47.8 64.5 16.7 107 1.3 150.9.1c43.9-1.1 89.3 12 109.3 41.3z">
+            </path>
+        </svg>
+    </div>
+
+    <div class="container">
+        <div class="form">
+            <h2>Bem-vindo!</h2>
+            <input id="email" type="email" placeholder="email@email.com" autocomplete="off">
+            <input id="password" type="password" placeholder="Senha" oninput="check()">
+            <input id="r_password" type="password" placeholder="Repita sua senha" oninput="check()">
+            <div class="options" onclick="ver()">
+                <i id="ver" class="far fa-eye"></i> <span id="word">Ver</span><span> Senha</span>
+            </div>
+            <input type="submit" value="Salvar senha">
+        </div>
+        <div class="validacoes">
+            <img src="images/Mobile login-bro.svg">
+            <div class="checklist">
+                <strong>A senha deve ter, pelo menos:</strong>
+                <div class="checkitem">
+                    <i id="check0" class="far fa-check-circle"></i> <span> 8 caracteres</span>
+                </div>
+                <div class="checkitem">
+                    <i  id="check1" class="far fa-check-circle"></i> <span> 1 letra maiúscula</span>
+                </div>
+                <div class="checkitem">
+                    <i id="check2" class="far fa-check-circle"></i> <span>1 letra minúscula</span>
+                </div>
+                <div class="checkitem">
+                    <i id="check3" class="far fa-check-circle"></i> <span>1 caracter especial</span>
+                </div>
+                <div class="checkitem">
+                    <i id="check4" class="far fa-check-circle"></i> <span>Não deve conter espaços</span>
+                </div>
+                <div class="checkitem">
+                    <i id="check5" class="far fa-check-circle"></i> <span>As senhas devem ser iguais</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
