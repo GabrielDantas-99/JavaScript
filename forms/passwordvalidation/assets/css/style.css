@@ -42,12 +42,16 @@ h2 {
 }
 
 .options {
-  text-align: right;
+  display: flex;
+  justify-content: end;
+  align-items: center;
   width: 300px;
   margin: 5px 0 15px 0;
   color: white;
   cursor: pointer;
 }
+
+.options #word {margin-left: 5px;}
 
 .validacoes {
   color: #fff;
