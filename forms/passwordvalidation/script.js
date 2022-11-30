@@ -48,11 +48,12 @@ function check() {
 
   // let check5 = document.getElementById("check5");
   // input == input2 ? check5.style.color="#40ea42" : check5.style.color="#fb830b";
+  
 }
 
 function validacao (elemento, validacao) {
   elemento = document.getElementById(elemento);
-  validacao ? elemento.style.color="#40ea42" : elemento.style.color="#fb830b";
+  validacao ? elemento.style.color="#41d442" : elemento.style.color="#ca0606";
 
 }
 

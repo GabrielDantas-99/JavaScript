@@ -11,12 +11,12 @@
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
+    
     <title>Recuperar Senha | ImportDev</title>
 </head>
 
 <body>
-
+    <!-- POR ULTIMO -->
     <div class="tk-blob" style="--time: 20s; --amount: 5; --fill: #56cbb9;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 747.2 726.7">
             <path
@@ -32,43 +32,46 @@
         </svg>
     </div>
 
-    <div class="container">
-        <div class="form">
-            <h2>Bem-vindo!</h2>
-            <input id="email" type="email" placeholder="email@email.com" autocomplete="off">
-            <input id="password" type="password" placeholder="Senha" oninput="check()">
-            <input id="r_password" type="password" placeholder="Repita sua senha" oninput="check()">
-            <div class="options" onclick="ver()">
-                <span id="icon" class="material-symbols-outlined">visibility</span>
-                <span id="word">Ver Senha</span>
+    <div class="module-border-wrap">
+        <div class="container">
+            <div class="form">
+                <h2>Bem-vindo!</h2>
+                <input id="email" type="email" placeholder="email@email.com" autocomplete="off">
+                <input id="password" type="password" placeholder="Senha" oninput="check()">
+                <input id="r_password" type="password" placeholder="Repita sua senha" oninput="check()">
+                <div class="options" onclick="ver()">
+                    <span id="icon" class="material-symbols-outlined">visibility</span>
+                    <span id="word">Ver Senha</span>
+                </div>
+                <input type="submit" value="Salvar senha">
             </div>
-            <input type="submit" value="Salvar senha">
-        </div>
-        <div class="validacoes">
-            <img src="images/Mobile login-bro.svg">
-            <div class="checklist">
-                <strong>A senha deve ter, pelo menos:</strong>
-                <div class="checkitem">
-                    <i id="check0" class="far fa-check-circle"></i> <span> 8 caracteres</span>
-                </div>
-                <div class="checkitem">
-                    <i  id="check1" class="far fa-check-circle"></i> <span> 1 letra maiúscula</span>
-                </div>
-                <div class="checkitem">
-                    <i id="check2" class="far fa-check-circle"></i> <span>1 letra minúscula</span>
-                </div>
-                <div class="checkitem">
-                    <i id="check3" class="far fa-check-circle"></i> <span>1 caracter especial</span>
-                </div>
-                <div class="checkitem">
-                    <i id="check4" class="far fa-check-circle"></i> <span>Não deve conter espaços</span>
-                </div>
-                <div class="checkitem">
-                    <i id="check5" class="far fa-check-circle"></i> <span>As senhas devem ser iguais</span>
+            <div class="validacoes">
+                <img src="images/Mobile login-bro.svg">
+                <div class="checklist">
+                    <strong>A senha deve ter, pelo menos:</strong>
+                    <div class="checkitem">
+                        <i id="check0" class="far fa-check-circle"></i> <span> 8 caracteres</span>
+                    </div>
+                    <div class="checkitem">
+                        <i  id="check1" class="far fa-check-circle"></i> <span> 1 letra maiúscula</span>
+                    </div>
+                    <div class="checkitem">
+                        <i id="check2" class="far fa-check-circle"></i> <span>1 letra minúscula</span>
+                    </div>
+                    <div class="checkitem">
+                        <i id="check3" class="far fa-check-circle"></i> <span>1 caracter especial</span>
+                    </div>
+                    <div class="checkitem">
+                        <i id="check4" class="far fa-check-circle"></i> <span>Não deve conter espaços</span>
+                    </div>
+                    <div class="checkitem">
+                        <i id="check5" class="far fa-check-circle"></i> <span>As senhas devem ser iguais</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 

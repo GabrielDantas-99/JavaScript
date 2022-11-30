@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <title>Import Dev | Recuperar Senha</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form">
+      <h2>Bem-vindo!</h2>
+      <input id="email" type="email" placeholder="email@email.com" autocomplete="off">
+      <div class="input">
+        <input id="password" type="password" placeholder="Senha" oninput="check()">
+        <span id="icon" class="material-symbols-outlined">
+          visibility
+        </span>
+      </div>
+      
+      <input id="r_password" type="password" placeholder="Repita a senha" oninput="check()">
+      <div class="opcoes" onclick="ver()">
+        <span id="icon" class="material-symbols-outlined">
+          visibility
+        </span>
+        <span id="word">Ver senha</span>
+      </div>
+      <input type="submit" value="Salvar senha">
+    </div>
+    <div class="validacoes">
+      <img src="assets/images/Mobile login-bro.svg">
+      <div class="checklist">
+        <strong>A senha deve ter, pelo menos:</strong>
+        <div class="checkitem">
+          <span id="check0" class="far fa-check-circle"></span>
+          <span>8 caracteres</span>
+        </div>
+        <div class="checkitem">
+          <span id="check1" class="far fa-check-circle"></span>
+          <span>1 letra maiúscula</span>
+        </div>
+        <div class="checkitem">
+          <span id="check2" class="far fa-check-circle"></span>
+          <span>1 letra minúscula</span>
+        </div>
+        <div class="checkitem">
+          <span id="check3" class="far fa-check-circle"></span>
+          <span> 1 caracter especial</span>
+        </div>
+        <div class="checkitem">
+          <span id="check4" class="far fa-check-circle"></span>
+          <span>Não deve conter espaços</span>
+        </div>
+        <div class="checkitem">
+          <span id="check5" class="far fa-check-circle"></span>
+          <span>As senhas devem ser iguais</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
