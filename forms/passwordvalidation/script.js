@@ -56,4 +56,3 @@ function validacao (elemento, validacao) {
   validacao ? elemento.style.color="#41d442" : elemento.style.color="#ca0606";
 
 }
-
