@@ -1,4 +1,5 @@
 let is_visible = false;
+let oito, maiuscula, minuscula, especial, espacos, iguais = false;
 
 function ver() {
   let input = document.getElementById("password");
@@ -24,35 +25,41 @@ function check() {
   let input = document.getElementById("password").value;
   let input2 = document.getElementById("r_password").value;
 
-  validacao("check0", input.length >= 8);
-  validacao("check1", /[A-Z]/.test(input));
-  validacao("check2", /[a-z]/.test(input));
-  validacao("check3", /\W|_/.test(input));
-  validacao("check4", !/\s/g.test(input) && (input.length > 0));
-  validacao("check5", (input == input2) && (input.length > 0));
-
-  // let check0 = document.getElementById("check0");
-  // input.length >= 8 ? check0.style.color="#40ea42" : check0.style.color="#fb830b";
-
-  // let check1 = document.getElementById("check1");
-  // /[A-Z]/.test(input) ? check1.style.color="#40ea42" : check1.style.color="#fb830b";
-
-  // let check2 = document.getElementById("check2");
-  // /[a-z]/.test(input) ? check2.style.color="#40ea42" : check2.style.color="#fb830b";
-
-  // let check3 = document.getElementById("check3");
-  // /\W|_/.test(input) ? check3.style.color="#40ea42" : check3.style.color="#fb830b";
-
-  // let check4 = document.getElementById("check4");
-  // !/\s/g.test(input) ? check4.style.color="#40ea42" : check4.style.color="#fb830b";
-
-  // let check5 = document.getElementById("check5");
-  // input == input2 ? check5.style.color="#40ea42" : check5.style.color="#fb830b";
-  
+  validacao("check0", input.length >= 8) ? oito = true : oito = false;
+  validacao("check1", /[A-Z]/.test(input)) ? maiuscula  = true : maiuscula  = false;
+  validacao("check2", /[a-z]/.test(input)) ? minuscula  = true : minuscula  = false;
+  validacao("check3", /\W|_/.test(input)) ? especial  = true : especial  = false;
+  validacao("check4", !/\s/g.test(input) && (input.length > 0)) ? espacos  = true : espacos  = false;
+  validacao("check5", (input == input2) && (input.length > 0)) ? iguais  = true : iguais  = false;
+  console.log("----------")
+  console.log(oito);
+  console.log(maiuscula);
+  console.log(minuscula);
+  console.log(especial);
+  console.log(espacos);
+  console.log(iguais);
+  finalizar();
 }
 
 function validacao (elemento, validacao) {
   elemento = document.getElementById(elemento);
-  validacao ? elemento.style.color="#41d442" : elemento.style.color="#ca0606";
+  let finalizar = false;
+  validacao ? finalizar = passou() : finalizar = naoPassou();
+  function passou() {
+    elemento.style.color="#41d442";
+    return true;
+  }
+  function naoPassou() {
+    elemento.style.color="#ca0606";
+    return false;
+  }
+  return finalizar;
+}
 
+function finalizar() {
+  let botao = document.getElementById("j_idt20:logar");
+  
+  let permissoes = [oito, maiuscula, minuscula, especial, espacos, iguais];
+  console.log("---" + permissoes.includes(false));
+  !permissoes.includes(false) ? botao.classList.replace("disabled", "enabled") : botao.classList.replace("enabled", "disabled");
 }

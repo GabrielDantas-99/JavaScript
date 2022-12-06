@@ -93,12 +93,18 @@ input {
   outline: none;
 }
 
-input[type="submit"] {
+
+.disabled{
+  background: #57575792;
+  color: rgb(167, 165, 165);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: default;
+}
+.enabled{
   background: #11cc97;
   color: white;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
 }
-
-
