@@ -37,13 +37,17 @@
             <div class="form">
                 <h2>Bem-vindo!</h2>
                 <input id="email" type="email" placeholder="email@email.com" autocomplete="off">
-                <input id="password" type="password" placeholder="Senha" oninput="check()">
-                <input id="r_password" type="password" placeholder="Repita sua senha" oninput="check()">
+                <input id="j_idt20:senha" type="password" placeholder="Senha" oninput="check()">
+                <input id="j_idt20:repetirSenha" type="password" placeholder="Repita sua senha" oninput="check()">
                 <div class="options" onclick="ver()">
                     <span id="icon" class="material-symbols-outlined">visibility</span>
                     <span id="word">Ver Senha</span>
                 </div>
-                <input id="j_idt20:logar" type="submit" class="disabled" value="Salvar senha">
+
+
+                <input id="j_idt20:logar" class="button disabled" type="submit" value="Salvar senha" onclick="salvar()">
+
+
             </div>
             <div class="validacoes">
                 <img src="images/Mobile login-bro.svg">
